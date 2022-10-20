@@ -1,4 +1,31 @@
+body {
+    background-color: #edf2f4;
+}
+
+
+main {
+    width: 100%;
+
+}
+
 nav {
     height: 75px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+#addBtn {
+    margin-top: 2rem;
+
+}
+
+.modal-body {
+    display: block;
+    align-items: center;
+    /* justify-content: ; */
+}
+
+.booksContainer {
+    margin-top: 2rem;
+
 }

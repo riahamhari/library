@@ -19,7 +19,92 @@
             <button class="btn btn-lg btn-outline-light me-2">Log In</button>
         </div>
     </nav>
+    <main>
+        <div id="buttonWrapper" class="text-center">
+            <button type="button" id="addBtn" class="btn btn-lg btn-light" data-bs-toggle="modal"
+                data-bs-target="#addBookModal">
+                <h2>+ Add Book</h2>
+            </button>
+        </div>
+        <div class="booksContainer">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"> The 48 Laws of Power</h5>
+                            <p class="card-text">Robert Greene
+                            </p>
+                            <p class="card-text"> 480 Pages
+                            </p>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-primary">Not Read</a>
+                                <a href="#" class="btn btn-light">Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">Add new book</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="add-book-form" id="addBookForm">
 
+                        <input class="input" type="text" id="title" placeholder="Title" required maxlength="100" />
+                        <p class="error-msg" id="errorMsg"></p>
+                        <input class="input" type="text" id="author" placeholder="Author" required maxlength="100" />
+                        <input class="input" type="number" id="pages" placeholder="Pages" required max="10000" />
+                        <div class="is-read">
+                            <label for="is-read">Have you read it?</label>
+                            <input class="checkbox" type="checkbox" id="isRead" />
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-success" type="submit" value="submit" data-bs-dismiss="modal"
+                        id="submitBtn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <div class="modal fade" id="addBookModal">
+        <form class="add-book-form" id="addBookForm">
+            <h3>Add new book</h3>
+            <input class="input" type="text" id="title" placeholder="Title" required maxlength="100" />
+            <p class="error-msg" id="errorMsg"></p>
+            <input class="input" type="text" id="author" placeholder="Author" required maxlength="100" />
+            <input class="input" type="number" id="pages" placeholder="Pages" required max="10000" />
+            <div class="is-read">
+                <label for="is-read">Have you read it?</label>
+                <input class="checkbox" type="checkbox" id="isRead" />
+            </div>
+            <button class="btn btn-light-green" type="submit">Submit</button>
+        </form>
+    </div> -->
 
 
 
@@ -43,6 +128,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
         crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
