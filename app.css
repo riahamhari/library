@@ -14,18 +14,28 @@ nav {
 }
 
 
+
 #addBtn {
     margin-top: 2rem;
 
 }
 
+.booksContainer {
+    margin-top: 2rem;
+
+}
+
+/* modal  */
 .modal-body {
     display: block;
     align-items: center;
     /* justify-content: ; */
 }
 
-.booksContainer {
-    margin-top: 2rem;
+#author {
+    margin: 0.5rem 1rem 1.5rem 0;
+}
 
+label {
+    font-size: 1.1rem;
 }
