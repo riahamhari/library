@@ -50,7 +50,17 @@ const createBookCard = (book) => {
     pages.textContent = `${book.pages}`
     removeBtn.textContent = "Remove"
     removeBtn.addEventListener('click', () => removeBtn.parentElement.parentElement.parentElement.parentElement.remove())
-    // readBtn.addEventListener('click', ()=>  )
+    readBtn.addEventListener('click', () => {
+        if (readBtn.textContent === 'Not Read') {
+            readBtn.textContent = 'Read';
+            readBtn.classList.remove('btn-danger')
+            readBtn.classList.add('btn-success')
+        } else {
+            readBtn.textContent = 'Not Read'
+            readBtn.classList.remove('btn-success')
+            readBtn.classList.add('btn-danger')
+        }
+    })
 
 
 
@@ -95,7 +105,17 @@ function resetBookGrid() {
 
 }
 
-
+// function toggleRead() {
+//     if (readBtn.textContent === 'Not Read') {
+//         readBtn.textContent = 'Read';
+//         readBtn.classList.remove('btn-danger')
+//         readBtn.classList.add('btn-success')
+//     } else {
+//         readBtn.textContent = 'Not Read'
+//         readBtn.classList.remove('btn-success')
+//         readBtn.classList.add('btn-danger')
+//     }
+// }
 
 
 function addBookToLibrary() {
