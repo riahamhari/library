@@ -4,6 +4,9 @@ const submitBtn = document.querySelector('#submitBtn');
 
 
 
+let colIndex = 0;
+
+
 
 const booksContainer = document.querySelector('.booksContainer')
 const booksRow = document.querySelector('.row')
@@ -39,12 +42,17 @@ const createBookCard = (book) => {
     pages.classList.add('card-text')
     btnGrid.classList.add('d-grid', 'gap-2')
     readBtn.classList.add('btn', 'btn-primary')
-    removeBtn.classList.add('btn', 'btn-light')
+    removeBtn.classList.add('btn', 'btn-light', 'removeButton')
+
 
     title.textContent = `${book.title}`
     author.textContent = `${book.author}`
     pages.textContent = `${book.pages}`
     removeBtn.textContent = "Remove"
+    removeBtn.addEventListener('click', () => removeBtn.parentElement.parentElement.parentElement.parentElement.remove())
+    // readBtn.addEventListener('click', ()=>  )
+
+
 
     if (checkbox.checked === true) {
         readBtn.textContent = 'Read';
@@ -66,10 +74,11 @@ const createBookCard = (book) => {
     btnGrid.appendChild(readBtn)
     btnGrid.appendChild(removeBtn)
 
+
 }
 
 
-
+// constructor
 class Book {
     constructor(title, author, pages, read) {
         this.title = title;
@@ -80,16 +89,44 @@ class Book {
 
 }
 
-
-
-function addBookToLibrary(bookTitle) {
-    myLibrary.push(bookTitle)
-}
-
-function displayBooks(library) {
-    for (let book of library) {
-
-    }
-
+function resetBookGrid() {
+    booksContainer.innerHTML = ''
+    createBookCard(myLibrary)
 
 }
+
+
+
+
+function addBookToLibrary() {
+
+    const newBook = getBookFromInput();
+    myLibrary.push(newBook)
+    createBookCard(newBook)
+}
+
+
+
+const getBookFromInput = () => {
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const pages = document.querySelector('#pages').value;
+    const read = document.querySelector('#isRead').checked;
+    return new Book(title, author, pages, read)
+}
+
+
+const clearInput = () => {
+    title.value = ''
+    author.value = ''
+    pages.value = ''
+    checkbox.value = ''
+}
+
+// Event Listeners
+addBtn.addEventListener('click', clearInput)
+submitBtn.addEventListener('click', addBookToLibrary)
+
+
+
+
